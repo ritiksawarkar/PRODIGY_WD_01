@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+main {
+    padding-top: 80px;
+}
+
+/* Navbar Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #212121;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f7a440;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover underline effect */
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #f7a440;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-menu li a:hover {
+    color: #f7a440;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: linear-gradient(to right, #f7a440, #212121);
+    color: #fff;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #212121;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #f7a440;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #212121;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-menu.open {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Portfolio Section */
+.portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.portfolio-item {
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-item h3 {
+    background-color: #212121;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Blog Section Styling */
+#blog {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#blog p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Blog List */
+#blog ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#blog ul li {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#blog ul li a {
+    text-decoration: none;
+    color: #f7a440;
+    transition: color 0.3s ease;
+}
+
+#blog ul li a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Blog List Hover Effect */
+#blog ul li:hover {
+    transform: translateX(10px);
+    /* Subtle shift effect on hover */
+    color: #333;
+}
+
+/* Team Section */
+#team {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Team Container */
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+/* Team Member Card */
+.team-member {
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image */
+.team-member img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Team Member Name */
+.team-member h3 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Team Member Role */
+.team-member p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f7a440;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #f7a440;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background-color: #f7c372;
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #f7a440;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #f7c372;
+}
+
+/* Default state for navigation links */
+.nav-menu li a {
+    text-decoration: none;
+    /* No underline by default */
+    color: #fff;
+    /* Default text color */
+    position: relative;
+    /* To position the underline */
+}
+
+/* When hovered over the links */
+.nav-menu li a:hover {
+    color: black;
+
+    /* Change text color to black when hovered */
+}
+
+/* Underline effect */
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    /* Set to transparent by default */
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Underline when hovered */
+.nav-menu li a:hover::after {
+    width: 100%;
+    background-color: #f7a440;
+    /* Set underline color to match the theme */
+}
+
+/* When the scroll position is above 50px, and the header background is dark */
+header.sticky .nav-menu li a {
+    color: black;
+    /* Change text color to black when scrolled */
+}
+
+header.sticky .nav-menu li a:hover::after {
+    background-color: #212121;
+    /* Change underline color to dark */
+}
